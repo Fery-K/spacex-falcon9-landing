@@ -16,11 +16,11 @@ st.set_page_config(
 # --- LOAD ASSETS ---
 @st.cache_resource
 def load_pipeline_and_features():
-    pipeline = joblib.load('model/model_logreg.joblib')
+    pipeline = joblib.load("./model/model_logreg.joblib")
     if hasattr(pipeline, 'best_estimator_'):
         pipeline = pipeline.best_estimator_
         
-    feature_cols = joblib.load('model/model_features.joblib')
+    feature_cols = joblib.load("./model/model_features.joblib")
     return pipeline, feature_cols
 
 try:
