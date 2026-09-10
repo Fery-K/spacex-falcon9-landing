@@ -15,18 +15,26 @@ st.set_page_config(
 
 # --- LOAD ASSETS ---
 @st.cache_resource
-def load_pipeline_and_features():
-    pipeline = joblib.load(Path(__file__).parent / "model" / "model_logreg.joblib")
-    if hasattr(pipeline, 'best_estimator_'):
-        pipeline = pipeline.best_estimator_
-        
-    feature_cols = joblib.load(Path(__file__).parent / "model" / "model_features.joblib")
-    return pipeline, feature_cols
+def load_assets():
+    pipeline = joblib.load("./model/model_logreg.joblib").best_estimator__
+    feats = joblib.load("./model/model_features.joblib")
 
-try:
-    model, expected_features = load_pipeline_and_features()
-except Exception:
-    model, expected_features = None, None
+    return pipeline, feats
+
+model, expected_features = load_assets()
+
+# def load_pipeline_and_features():
+#     pipeline = joblib.load(Path(__file__).parent / "model" / "model_logreg.joblib")
+#     if hasattr(pipeline, 'best_estimator_'):
+#         pipeline = pipeline.best_estimator_
+        
+#     feature_cols = joblib.load(Path(__file__).parent / "model" / "model_features.joblib")
+#     return pipeline, feature_cols
+
+# try:
+#     model, expected_features = load_pipeline_and_features()
+# except Exception:
+#     model, expected_features = None, None
 
 # --- SIDEBAR (AUTHOR CREDITS & INFO) ---
 with st.sidebar:
