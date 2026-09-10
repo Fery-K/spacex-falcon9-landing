@@ -124,13 +124,6 @@ with tab1[0]:
                 index=4,
                 help="Hardware revision tier (Block 5 is the modern, highly reusable standard)."
             )
-            flights = st.slider(
-                "Total Flights Flown by this Core", 
-                min_value=1, 
-                max_value=20, 
-                value=1,
-                help="Total cumulative launches logged by this specific booster core."
-            )
             reused_count = st.slider(
                 "Historical Reused Times", 
                 min_value=0, 
@@ -145,6 +138,7 @@ with tab1[0]:
                 horizontal=True,
                 help="Deployable legs required for soft surface touchdown."
             )
+            flights = reused_count + 1
             reused = "Yes" if flights > 1 else "No"
 
         submitted = st.form_submit_button("Predict Landing Outcome", use_container_width=True)
