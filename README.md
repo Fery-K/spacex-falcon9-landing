@@ -47,3 +47,5 @@ streamlit run main.py
 
 ## Streamlit Deployed App (Demo Purposes)
 [Click here to open streamlit deployed app](https://ibm-capstone-spacex-landing-prediction.streamlit.app/)
+
+[![Streamlit UI Preview](./preview/streamlit-preview.png)](https://ibm-capstone-spacex-landing-prediction.streamlit.app/)
