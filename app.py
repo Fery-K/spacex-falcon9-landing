@@ -13,7 +13,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# --- LOAD ASSETS ---
+# --- LOAD MODEL ASSETS ---
 @st.cache_resource
 def load_pipeline_and_features():
     pipeline = joblib.load("./model/model_logreg.joblib")
